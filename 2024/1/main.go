@@ -23,7 +23,6 @@ func main() {
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
-
 		parts := strings.Split(line, "   ")
 
 		if len(parts) != 2 {
@@ -32,12 +31,12 @@ func main() {
 
 		leftInt, err := strconv.Atoi(parts[0])
 		if err != nil {
-			panic(err)
+			log.Fatal("Unable to convert string to int.")
 		}
 
 		rightInt, err := strconv.Atoi(parts[1])
 		if err != nil {
-			panic(err)
+			log.Fatal("Unable to convert string to int.")
 		}
 
 		left = append(left, leftInt)
