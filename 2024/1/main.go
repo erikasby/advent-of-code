@@ -31,12 +31,12 @@ func main() {
 
 		leftInt, err := strconv.Atoi(parts[0])
 		if err != nil {
-			log.Fatal("Unable to convert string to int.")
+			log.Fatal("Unable to convert string to int.", err)
 		}
 
 		rightInt, err := strconv.Atoi(parts[1])
 		if err != nil {
-			log.Fatal("Unable to convert string to int.")
+			log.Fatal("Unable to convert string to int.", err)
 		}
 
 		left = append(left, leftInt)

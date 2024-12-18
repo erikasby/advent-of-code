@@ -36,12 +36,12 @@ func main() {
 			if i == 0 {
 				current, err := strconv.Atoi(parts[i])
 				if err != nil {
-					log.Fatal(err)
+					log.Fatal("Unable to convert string to int.", err)
 				}
 
 				next, err := strconv.Atoi(parts[i+1])
 				if err != nil {
-					log.Fatal(err)
+					log.Fatal("Unable to convert string to int.", err)
 				}
 
 				if next > current {
@@ -52,15 +52,15 @@ func main() {
 
 			previous, err := strconv.Atoi(parts[i-1])
 			if err != nil {
-				log.Fatal(err)
+				log.Fatal("Unable to convert string to int.", err)
 			}
 
 			current, err := strconv.Atoi(parts[i])
 			if err != nil {
-				log.Fatal(err)
+				log.Fatal("Unable to convert string to int.", err)
 			}
 
-			// Rule 1: Either have decreased or increased
+			// Rule 1: Either is decreasing or increasing; never same
 			isSameValue := previous == current
 			if isSameValue {
 				break
